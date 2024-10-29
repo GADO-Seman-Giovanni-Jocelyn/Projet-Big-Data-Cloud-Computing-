@@ -30,7 +30,7 @@ s3_client = boto3.client(
 obj = s3_client.get_object(Bucket=bucket_name, Key=file_key)
 data = pd.read_csv(obj['Body'])
 
-
+print(data.columns)
 
 # Configuration de la page
 st.set_page_config(page_title="Dashboard",page_icon=":bookmark_tabs:", layout="wide")
