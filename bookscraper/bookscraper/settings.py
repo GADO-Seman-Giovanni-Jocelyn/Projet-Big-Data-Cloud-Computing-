@@ -91,9 +91,21 @@ ROBOTSTXT_OBEY = True
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
-FEEDS = {
-    'bookscraper.csv': {
-        'format': 'csv',
-        'encoding': 'utf8',
-    }
+
+from dotenv import load_dotenv, dotenv_values
+import os
+from pathlib import Path
+
+# Charger les variables depuis .env
+dp = Path(__file__).resolve().parents[2] / '.env'
+load_dotenv(dotenv_path=dp)
+
+# Tester si les variables sont bien récupérées
+BUCKET_NAME = os.getenv('BUCKET_NAME')
+ACCESS_KEY = os.getenv('AWS_ACCESS_KEY_ID')
+SECRET_ACCESS = os.getenv('AWS_SECRET_ACCESS_KEY')
+FILE_FORMAT = 'csv'
+
+ITEM_PIPELINES = {
+    'bookscraper.pipelines.S3Pipeline': 1,
 }

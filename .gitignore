@@ -1,2 +1,2 @@
-./.venv
-Dashboard/.env
+.venv/
+.env

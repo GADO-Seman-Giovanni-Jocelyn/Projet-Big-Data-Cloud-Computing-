@@ -6,18 +6,18 @@ from PIL import Image
 import boto3
 import os
 from dotenv import load_dotenv #dotenv_values
-
+from pathlib import Path
 
 # Charger les variables d'environnement
-load_dotenv()
+dp = Path(__file__).resolve().parents[2] / '.env'
+load_dotenv(dotenv_path=dp)
 
 # Récupération des informations depuis les variables d'environnement
 aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID")
 aws_secret_access_key = os.getenv("AWS_SECRET_ACCESS_KEY")
 bucket_name = os.getenv("BUCKET_NAME")
 file_key =os.getenv("FILE_KEY")
-print(aws_access_key_id)
-print(bucket_name)
+
 
 # Configuration de l'accès au bucket (compartiment)
 s3_client = boto3.client(
@@ -36,6 +36,8 @@ data = pd.read_csv(obj['Body'])
 st.set_page_config(page_title="Dashboard",page_icon=":bookmark_tabs:", layout="wide")
 
 
+
+
 html_title="""
   <style>
   .title-test{
@@ -49,17 +51,27 @@ st.markdown(html_title, unsafe_allow_html=True)
 
 
 # Importation de l'image à mettre sur le sidebar
-image=Image.open('Dashboard/images/book_logo.png')
+image=Image.open('book_logo.png')
 
 
 # Ajout de l'image sur le sidebar
 with st.sidebar:
-    st.image(image, width=200)
+     st.image(image, width=200)
+     filtre_date = st.sidebar.selectbox("Filtrer par la date", ['Tous'] + list(data['date'].unique()))
+
+
+#--------------------------------------------------
+# Appliquer filtre de date
+if filtre_date != 'Tous':
+    data = data[data['date'] == filtre_date]
+
+#---------------------------------------------------
 
 
 
 # Création de la première partie comporatnt les informations globales
 st.subheader('Informations globales', divider="rainbow")
+
 
 # Première ligne avec 4 colonnes
 col1, col2, col3 = st.columns(3,gap='medium')
