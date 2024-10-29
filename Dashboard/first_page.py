@@ -5,7 +5,31 @@ import plotly.express as px
 from PIL import Image
 import boto3
 import os
-from dotenv import load_dotenv, dotenv_values
+from dotenv import load_dotenv #dotenv_values
+
+
+# Charger les variables d'environnement
+load_dotenv()
+
+# Récupération des informations depuis les variables d'environnement
+aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID")
+aws_secret_access_key = os.getenv("AWS_SECRET_ACCESS_KEY")
+bucket_name = os.getenv("BUCKET_NAME")
+file_key =os.getenv("FILE_KEY")
+print(aws_access_key_id)
+print(bucket_name)
+
+# Configuration de l'accès au bucket (compartiment)
+s3_client = boto3.client(
+    's3',
+    aws_access_key_id=aws_access_key_id,
+    aws_secret_access_key=aws_secret_access_key,
+)
+
+# Téléchargement du fichier et chargement en DataFrame
+obj = s3_client.get_object(Bucket=bucket_name, Key=file_key)
+data = pd.read_csv(obj['Body'])
+
 
 
 # Configuration de la page
@@ -32,26 +56,6 @@ image=Image.open('Dashboard/images/book_logo.png')
 with st.sidebar:
     st.image(image, width=200)
 
-# Charger les variables d'environnement
-load_dotenv()
-
-# Récupération des informations depuis les variables d'environnement
-aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID")
-aws_secret_access_key = os.getenv("AWS_SECRET_ACCESS_KEY")
-bucket_name = os.getenv("BUCKET_NAME")
-file_key =os.getenv("FILE_KEY")
-
-
-# Configuration de l'accès au bucket (compartiment)
-s3_client = boto3.client(
-    's3',
-    aws_access_key_id=aws_access_key_id,
-    aws_secret_access_key=aws_secret_access_key,
-)
-
-# Téléchargement du fichier et chargement en DataFrame
-obj = s3_client.get_object(Bucket=bucket_name, Key=file_key)
-data = pd.read_csv(obj['Body'])
 
 
 # Création de la première partie comporatnt les informations globales
