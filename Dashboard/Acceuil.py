@@ -7,6 +7,7 @@ import boto3
 import os
 from dotenv import load_dotenv #dotenv_values
 from pathlib import Path
+from Pages import Data.py
 
 # Charger les variables d'environnement
 #dp = Path(__file__).resolve().parents[2] / '.env'
