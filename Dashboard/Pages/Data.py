@@ -34,7 +34,7 @@ st.set_page_config(layout="wide")
 
 #st.markdown('<style> div.block-container{padding-top:1px; padding-bottom:5px}</style>', unsafe_allow_html=True)
 
-#image=Image.open('book_logo.png')
+image=Image.open('Dashboard/book_logo.png')
 
 
 #-------------------------------------------------------------
