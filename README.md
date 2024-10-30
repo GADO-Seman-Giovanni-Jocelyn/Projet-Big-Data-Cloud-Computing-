@@ -20,25 +20,25 @@ git clone " https://github.com/GADO-Seman-Giovanni-Jocelyn/Projet-Big-Data-Cloud
 python -m venv venv # creation  
 venv\Scripts\activate # activation   
 
-<<<<<<< HEAD
 En cas de demande d'autorisation taper *window+X* puis executer sous forme d'administrateur puis taper *Set-ExecutionPolicy RemoteSigned* . L'on pourra mettre à jour le pip après modification *python.exe -m pip install --upgrade pip*
-3. Installer les dépendances  
-pip install -r requirements.txt  
-4. Configurer les variables d'environnement :  
-•	Créer un fichier. env à la racine du projet et y ajouter les informations AWS.  
-## Arborescence 
-![Architecture du Projet](Images/arborescence.PNG)
+3. Installer les dépendances
+pip install -r requirements.txt
+4. Configurer les variables d'environnement :
+•	Créer un fichier. env à la racine du projet et y ajouter les informations AWS.
 ## Structure du Projet
-Description de certains fichiers  
-•	bookscraper.py : Spider Scrapy pour extraire les informations des livres.  
-•	pipelines.py : Pipeline de traitement des données et chargement vers AWS S3.  
-•	settings.py : Configuration du projet et gestion des paramètres Scrapy.  
-•	.env : Stockage sécurisé des clés AWS (non inclus dans le dépôt).  
+Description de certains fichiers
+•	bookscraper.py : Spider Scrapy pour extraire les informations des livres.
+
+•	pipelines.py : Pipeline de traitement des données et chargement vers AWS S3.
+
+•	settings.py : Configuration du projet et gestion des paramètres Scrapy.
+
+•	.env : Stockage sécurisé des clés AWS (non inclus dans le dépôt).
 ## Exécution du scraping
--	Afin de réaliser le scraping se placer dans dossier bookscraper( par exemple avec **cd bookscraper** dans le terminal)  
--	Ensuite dans terminal executer:   
-scrapy crawl books  
-Le spider parcourt le site et collecte les informations, qui sont ensuite enregistrées dans un fichier CSV. Une fois le scraping terminé, le fichier est automatiquement uploadé sur AWS S3.  
+-	Afin de réaliser le scraping se placer dans dossier bookscraper( par exemple avec cd bookscraper dans le terminal)
+-	Ensuite dans terminal executer: 
+scrapy crawl books
+Le spider parcourt le site et collecte les informations, qui sont ensuite enregistrées dans un fichier CSV. Une fois le scraping terminé, le fichier est automatiquement uploadé sur AWS S3.
 ## Visualisation du Dashboard
 1. 1ère possibilté : Accéder directement par le lien envoyer par l’administrateur (besoin d’une connexion internet)
 2. 2ème possibilité :  
@@ -49,26 +49,4 @@ Lancer la commande **streamlit run app.py** dans le terminal
 Si vous n’avez pas de compte streamlit, il vous sera nécessaire de mettre une adresse mail
 Si oui, le dashboard s’ouvrira dans votre navigateur par défaut
 Vous pourrez ensuite parcourir le dashboard via le navigateur
-=======
-3. Installer les dépendances
-pip install -r requirements.txt
-4. Configurer les variables d'environnement :
-•	Créer un fichier. env à la racine du projet et y ajouter les informations AWS.
-Structure du Projet
-Description de certains fichiers
-•	bookscraper.py : Spider Scrapy pour extraire les informations des livres.
-
-•	pipelines.py : Pipeline de traitement des données et chargement vers AWS S3.
-
-•	settings.py : Configuration du projet et gestion des paramètres Scrapy.
-
-•	.env : Stockage sécurisé des clés AWS (non inclus dans le dépôt).
-Exécution du scraping
--	Afin de réaliser le scraping se placer dans dossier bookscraper( par exemple avec cd bookscraper dans le terminal)
--	Ensuite dans terminal executer: 
-scrapy crawl books
-Le spider parcourt le site et collecte les informations, qui sont ensuite enregistrées dans un fichier CSV. Une fois le scraping terminé, le fichier est automatiquement uploadé sur AWS S3.
->>>>>>> 34bb56f75f49929224fd0e193356142a122c4a16
-
-
 
