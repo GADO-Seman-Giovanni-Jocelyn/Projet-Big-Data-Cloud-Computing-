@@ -34,7 +34,7 @@ st.set_page_config(layout="wide")
 
 #st.markdown('<style> div.block-container{padding-top:1px; padding-bottom:5px}</style>', unsafe_allow_html=True)
 
-image=Image.open('book_logo.png')
+#image=Image.open('book_logo.png')
 
 
 #-------------------------------------------------------------
@@ -47,7 +47,7 @@ image=Image.open('book_logo.png')
 with st.sidebar:
 #with col1:
     
-    st.image(image, width=200)
+    #st.image(image, width=200)
     st.sidebar.title("Filtres")
     filtre_cat = st.sidebar.selectbox("Filtrer par catégorie de livre", ['Tous'] + list(s3_data['categorie'].unique()))
     filtre_dispo = st.sidebar.selectbox("Filtrer par disponibilité", ['Tous'] + list(s3_data['availability'].unique()))
