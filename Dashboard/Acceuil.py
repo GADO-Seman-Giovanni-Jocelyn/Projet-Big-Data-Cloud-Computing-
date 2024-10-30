@@ -9,14 +9,14 @@ from dotenv import load_dotenv #dotenv_values
 from pathlib import Path
 
 # Charger les variables d'environnement
-dp = Path(__file__).resolve().parents[2] / '.env'
-load_dotenv(dotenv_path=dp)
+#dp = Path(__file__).resolve().parents[2] / '.env'
+#load_dotenv(dotenv_path=dp)
 
 # Récupération des informations depuis les variables d'environnement
-aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID")
-aws_secret_access_key = os.getenv("AWS_SECRET_ACCESS_KEY")
-bucket_name = os.getenv("BUCKET_NAME")
-file_key =os.getenv("FILE_KEY")
+aws_access_key_id = st.secrets("AWS_ACCESS_KEY_ID")
+aws_secret_access_key = st.secrets("AWS_SECRET_ACCESS_KEY")
+bucket_name = st.secrets("BUCKET_NAME")
+file_key =st.secrets("FILE_KEY")
 
 
 # Configuration de l'accès au bucket (compartiment)
