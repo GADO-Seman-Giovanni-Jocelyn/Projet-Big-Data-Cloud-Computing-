@@ -34,18 +34,10 @@ st.set_page_config(layout="wide")
 
 #st.markdown('<style> div.block-container{padding-top:1px; padding-bottom:5px}</style>', unsafe_allow_html=True)
 
-image=Image.open('Dashboard/book_logo.png')
+image=Image.open('Images/book_logo.png')
 
-
-#-------------------------------------------------------------
-
-
-#------------------------------------------------------------
-
-#col1, col2 = st.columns([0.2, 0.8])
 
 with st.sidebar:
-#with col1:
     
     st.image(image, width=200)
     st.sidebar.title("Filtres")
@@ -56,7 +48,6 @@ with st.sidebar:
 
 
 
-#with col2:
 
 html_title="""
   <style>

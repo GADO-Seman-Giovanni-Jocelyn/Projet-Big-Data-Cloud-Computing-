@@ -51,7 +51,7 @@ st.markdown(html_title, unsafe_allow_html=True)
 
 
 # Importation de l'image à mettre sur le sidebar
-image=Image.open('Dashboard/book_logo.png')
+image=Image.open('Images/book_logo.png')
 
 
 # Ajout de l'image sur le sidebar
@@ -187,7 +187,7 @@ top5_categories = grouped_data.nlargest(10, 'nombre_de_livres_disponible')
 with col5:
     fig = px.pie(top5_categories, values='nombre_de_livres_disponible', names='categorie', hole=0.5, width=400, height=400)
     fig.update_traces(text = top5_categories['categorie'], textposition='inside')
-    fig.update_layout(title="Répartition des Livres Disponibles par Catégorie")
+    fig.update_layout(title="Répartition des livres disponibles par catégorie")
     st.plotly_chart(fig, use_container_width=True)
 
 # Affichage des informations dans la seconde colonne
@@ -196,7 +196,7 @@ with col6:
     custom_colors = ["#FFCC00", "#9CF6F6","#1B2D2A","#414066","#82816D"]
     fig = px.histogram(data, x='classe_bin',color='classe_bin', color_discrete_sequence=custom_colors) 
     fig.update_layout(
-        title="Distribution des prix des livres par classes",
+        title="Distribution du nombre de livres par classe de prix",
         xaxis_title="Prix des livres",
         yaxis_title="Nombre de livres",
         bargap=0.2,
@@ -212,7 +212,7 @@ st.markdown("---")
 
 
 # Création de la troisième partie comportant les informations détaillées sur les catégories et les prix moyens par catégorie
-st.subheader('Catégories et prix moyen par catégorie', divider="rainbow")
+st.subheader('Nombre de livres et prix moyen par catégorie', divider="rainbow")
 
 # Première ligne avec 2 colonnes
 col7, col8=st.columns(2)
