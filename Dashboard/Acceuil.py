@@ -51,12 +51,12 @@ st.markdown(html_title, unsafe_allow_html=True)
 
 
 # Importation de l'image à mettre sur le sidebar
-image=Image.open('book_logo.png')
+#image=Image.open('book_logo.png')
 
 
 # Ajout de l'image sur le sidebar
 with st.sidebar:
-     st.image(image, width=200)
+     #st.image(image, width=200)
      filtre_date = st.sidebar.selectbox("Filtrer par la date", ['Tous'] + list(data['date'].unique()))
 
 
