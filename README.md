@@ -9,17 +9,17 @@ Ce projet est une application qui permet d'automatiser le suivi des prix via un 
 A la suite de l’extraction des données, un tableau de bord interactif est développé avec Streamlit pour afficher des informations concernant essentiellement les prix de vente de livres. Ces informations présentées sous forme visuelle permettent aux utilisateurs d’explorer divers aspects des livres, comme les catégories, les prix et la disponibilité.  
 ## Prérequis
 1.	Python 3.12.2 (**il faut utiliser une version < 3.13**)
-2.	Bibliothèques nécessaires sont à installer à partir du fichier *requirements.txt*
-3.	Compte AWS avec accès à un bucket S3 et clés d’accès AWS.
+2.	Les bibliothèques nécessaires sont à installer à partir du fichier *requirements.txt*
+3.	Un compte AWS avec accès à un bucket S3 et clés d’accès AWS.
 Pour executer l'application en local faire: 
 4.	Créer un fichier *.env* contenant les informations suivantes : le nom du bucket, la clé d’accès au bucket, la clé secrète et le nom du fichier mis dans le fichier guide utilisateur.
-5.  Créer le dossier *.streamlit* qui contient un fichier nommée *secrets.toml* qui contient les mêmes informations que ci dessus.
+5.  Créer le dossier *.streamlit* qui contient un fichier nommé *secrets.toml* qui contient les mêmes informations que ci-dessus.
 
 
 ## Installation
 1. Cloner le projet
 ``git clone " https://github.com/GADO-Seman-Giovanni-Jocelyn/Projet-Big-Data-Cloud-Computing-"``
-2. Creation de l’environnement de travail  
+2. Création de l’environnement de travail  
 ``python -m venv venv`` 
 
 3. Activation de l’environnement de travail 
@@ -87,8 +87,15 @@ La première page nommée Accueil présente les informations résumées sur les 
 ![Accueil1](Images/Accueil.png)
 ![Accueil2](Images/Accueil2.png)
 
-Il y a egalement les graphiques qui présentent la répartition des livres suivant les 10 plus grandes catégories ainsi que la répartion de la distribution du nombres de livres par classe de prix.
+Il y a également les graphiques qui présentent la répartition des livres suivant les 10 plus grandes catégories ainsi que la répartion de la distribution du nombres de livres par classe de prix.
 
 La deuxième page permet d'explorer la base entièrement avec la possibilité de filtrer suivant la categorie et la disponibilité des livres. On peut filtrer suivant des prix ou faire une recherche directement dans la base de données.
 ![Images1](Images/Data1.png)
 ![Images2](Images/Data2.png)
+
+
+## Sources
+
+• [Package Scrapy](https://docs.scrapy.org/en/latest/intro/tutorial.html)
+
+• [Package Streamlit](https://docs.streamlit.io/)

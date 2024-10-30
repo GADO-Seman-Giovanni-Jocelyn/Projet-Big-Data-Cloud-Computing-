@@ -1,7 +1,7 @@
-#premiere etapes localisation des url de categories, des livres et des champs de données que nous voulons
+#première étape localisation des url de categories, des livres et des champs de données que nous voulons
 #Resultats:
 #les URL de catégorie sont stockées dans un ul, élément HTML avec une classe nav nav-list
-#Les URL des pages de livres individuelles sont situées sous un articleélément HTML avec la classe CSS product pod
+#Les URL des pages de livres individuelles sont situées sous un article élément HTML avec la classe CSS product pod
 
 # Le spider commence par l’URL de départ et récupère tous les liens de catégories.
 #Pour chaque catégorie, il visite la page de catégorie et extrait les informations sur les livres.
