@@ -26,8 +26,11 @@ pip install -r requirements.txt
 Structure du Projet
 Description de certains fichiers
 •	bookscraper.py : Spider Scrapy pour extraire les informations des livres.
+
 •	pipelines.py : Pipeline de traitement des données et chargement vers AWS S3.
+
 •	settings.py : Configuration du projet et gestion des paramètres Scrapy.
+
 •	.env : Stockage sécurisé des clés AWS (non inclus dans le dépôt).
 Exécution du scraping
 -	Afin de réaliser le scraping se placer dans dossier bookscraper( par exemple avec cd bookscraper dans le terminal)
